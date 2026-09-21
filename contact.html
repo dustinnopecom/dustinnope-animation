@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONTACT — Dustinnope Animation Studios</title>
+<meta name="description" content="Contact Dustinnope Animation Studios: dustin@dustinnope.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html">
+    <img src="assets/wolf-emblem.webp" alt="Dustinnope wolf emblem">
+    <span class="brand-text">ANIMATION <span class="red">STUDIOS</span></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  <nav class="main-nav" id="mainNav">
+    <a class="nav-link" href="animations.html">ANIMATIONS</a>
+    <a class="nav-link" href="projects.html">PROJECTS</a>
+    <a class="nav-link" href="lore.html">LORE</a>
+    <a class="nav-link" href="about.html">ABOUT</a>
+    <a class="nav-link active" href="contact.html">CONTACT</a>
+    <a class="hub-btn" href="https://dustinnope.com">[ MAIN MUSIC HUB ]</a>
+  </nav>
+</header>
+
+<section class="section" style="padding-top:150px;">
+  <div class="contact-wrap">
+    <span class="kicker reveal">GET IN TOUCH</span>
+    <h2 class="reveal">CON<span class="red">TACT</span></h2>
+    <p class="lede reveal" style="margin-bottom:26px;">Booking, collabs, or just talking shop — send it. The form opens your mail app with everything filled in.</p>
+    <p class="email-line reveal">Or write direct: <a href="mailto:dustin@dustinnope.com">dustin@dustinnope.com</a></p>
+    <form class="contact-form reveal" id="contactForm">
+      <div class="field">
+        <label for="cf-name">NAME</label>
+        <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="field">
+        <label for="cf-email">EMAIL</label>
+        <input type="email" id="cf-email" name="email" placeholder="you@email.com" required>
+      </div>
+      <div class="field">
+        <label for="cf-message">MESSAGE</label>
+        <textarea id="cf-message" name="message" placeholder="What's on your mind?" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-red" style="justify-self:start;">SEND IT</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <img class="foot-emblem" src="assets/wolf-emblem.webp" alt="Dustinnope wolf emblem">
+  <nav class="foot-nav">
+    <a href="animations.html">ANIMATIONS</a>
+    <a href="projects.html">PROJECTS</a>
+    <a href="lore.html">LORE</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+  <p>DUSTINNOPE ANIMATION STUDIOS // NOPE ENTERTAINMENT<br>&copy; <span class="js-year">2026</span> — <span class="red">EVERY FRAME, OWNED OUTRIGHT.</span></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
