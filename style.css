@@ -40,7 +40,7 @@ header{
   border-bottom:1px solid var(--line);
 }
 .brand{display:flex;align-items:center;gap:12px;}
-.brand img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 12px rgba(193,18,31,.6));}
+.brand img{height:44px;width:auto;object-fit:contain;filter:drop-shadow(0 0 12px rgba(193,18,31,.6));}
 .brand .brand-text{font-family:'Bebas Neue',Impact,sans-serif;font-size:1.25rem;letter-spacing:.14em;color:var(--bone);}
 .brand .brand-text .red{color:var(--blood);}
 nav.main-nav{display:flex;align-items:center;gap:clamp(14px,2.4vw,34px);}
