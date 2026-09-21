@@ -3,634 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DUSTINNOPE — Official Hub | Nope Entertainment</title>
-<meta name="description" content="The official production hub of Dustinnope — original music, independent animation, and unfiltered storytelling. Nope Entertainment.">
+<title>DUSTINNOPE ANIMATION STUDIOS</title>
+<meta name="description" content="Dustinnope Animation Studios. Independent animation, original music videos, and cinematic storytelling crafted without compromise.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ============ DUSTINNOPE OFFICIAL HUB — BRAND SYSTEM ============
-   PALETTE (STRICT): void blacks #040406 / #09090d, blood red #ff1a40 / #ff0033,
-   electric bayou cyan #00f0ff. NO purple. NO pink. NO pastel. NO violet.
-   ZERO rounded corners. Sharp edges only.
-================================================================ */
-*{margin:0;padding:0;box-sizing:border-box;border-radius:0 !important;}
-:root{
-  --void:#040406;
-  --void2:#09090d;
-  --red:#ff1a40;
-  --red-deep:#ff0033;
-  --cyan:#00f0ff;
-  --glass:rgba(16,16,24,0.75);
-  --line:rgba(255,255,255,0.08);
-  --txt:#e8e8ec;
-  --dim:#9a9aa5;
-}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--void);
-  color:var(--txt);
-  font-family:'Space Grotesk',sans-serif;
-  overflow-x:hidden;
-}
-h1,h2,h3,.serif{font-family:'Cinzel',serif;}
-a{color:inherit;text-decoration:none;}
-img{display:block;max-width:100%;}
-section{scroll-margin-top:84px;position:relative;}
-::selection{background:var(--red);color:#000;}
-
-/* ================= SPLASH INTRO ================= */
-#intro{
-  position:fixed;inset:0;z-index:9999;background:#020204;
-  display:flex;align-items:center;justify-content:center;
-  transition:opacity .8s ease,filter .8s ease,transform .8s ease;
-}
-#intro.dissolve{opacity:0;filter:blur(14px);transform:scale(1.05);pointer-events:none;}
-.intro-stage{position:relative;width:100%;height:100%;}
-.intro-moon{
-  position:absolute;top:44%;left:50%;width:min(56vmin,440px);
-  transform:translate(-50%,-50%) scale(.6);opacity:0;
-  animation:moonIn 1.2s ease-out 1.6s forwards;
-  filter:drop-shadow(0 0 60px rgba(255,26,64,.35));
-}
-@keyframes moonIn{
-  to{transform:translate(-50%,-50%) scale(1);opacity:1;}
-}
-.intro-haze{
-  position:absolute;top:44%;left:50%;width:min(80vmin,640px);height:min(80vmin,640px);
-  transform:translate(-50%,-50%);opacity:0;pointer-events:none;
-  background:radial-gradient(circle,rgba(255,26,64,.22) 0%,rgba(255,26,64,.06) 45%,transparent 70%);
-  animation:hazeIn 1.2s ease-out 1.6s forwards;
-}
-@keyframes hazeIn{to{opacity:1;}}
-.intro-wolf-wrap{
-  position:absolute;top:44%;left:50%;
-  transform:translate(-50%,-50%) scale(1.06);opacity:0;
-  animation:wolfSlam .45s cubic-bezier(.2,1.4,.3,1) 2.05s forwards;
-  z-index:3;
-}
-.intro-wolf-wrap img{width:min(60vmin,470px);}
-.intro-wolf-flare{
-  position:absolute;top:50%;left:50%;width:min(74vmin,600px);height:min(74vmin,600px);
-  transform:translate(-50%,-50%);opacity:0;pointer-events:none;z-index:2;
-  background:radial-gradient(circle,rgba(255,26,64,.5) 0%,rgba(255,26,64,.12) 40%,transparent 68%);
-  animation:flareOut .9s ease-out 2.05s forwards;
-}
-@keyframes wolfSlam{
-  0%{opacity:0;transform:translate(-50%,-50%) scale(1.35);}
-  60%{opacity:1;transform:translate(-50%,-50%) scale(.98);}
-  100%{opacity:1;transform:translate(-50%,-50%) scale(1);}
-}
-@keyframes flareOut{0%{opacity:0;}30%{opacity:1;}100%{opacity:0;}}
-.intro-brand{
-  position:absolute;bottom:7%;left:50%;transform:translateX(-50%);
-  text-align:center;z-index:4;opacity:0;
-  animation:brandSnap .3s ease-out .7s forwards;
-}
-@keyframes brandSnap{
-  0%{opacity:0;transform:translateX(-50%) scale(1.25);}
-  100%{opacity:1;transform:translateX(-50%) scale(1);}
-}
-.intro-brand h1{
-  font-size:clamp(2rem,7vw,4.2rem);font-weight:900;letter-spacing:.14em;color:#fff;
-  text-shadow:0 0 18px var(--red),0 0 60px rgba(255,26,64,.8),0 0 120px rgba(255,0,51,.5);
-}
-.ekg{width:min(70vw,560px);height:90px;margin:0 auto;overflow:visible;}
-.ekg path{
-  fill:none;stroke:var(--red);stroke-width:3;
-  stroke-dasharray:1400;stroke-dashoffset:1400;
-  animation:ekgDraw 1.5s linear .1s forwards;
-  filter:drop-shadow(0 0 8px var(--red));
-}
-@keyframes ekgDraw{to{stroke-dashoffset:0;}}
-#skipIntro{
-  position:absolute;bottom:22px;right:22px;z-index:10;
-  background:transparent;border:1px solid var(--line);color:var(--dim);
-  font-family:'Space Grotesk',sans-serif;font-size:.75rem;letter-spacing:.25em;
-  padding:10px 18px;cursor:pointer;transition:all .25s;
-}
-#skipIntro:hover{border-color:var(--red);color:var(--red);box-shadow:0 0 16px rgba(255,26,64,.35);}
-
-/* ================= NAV ================= */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:900;height:72px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 clamp(16px,4vw,48px);
-  background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line);
-}
-.nav-brand{display:flex;align-items:center;gap:12px;}
-.nav-brand img{height:42px;width:auto;object-fit:contain;filter:drop-shadow(0 0 10px rgba(255,26,64,.7));}
-.nav-brand span{font-family:'Cinzel',serif;font-weight:800;letter-spacing:.18em;font-size:1.05rem;color:#fff;text-shadow:0 0 14px rgba(255,26,64,.6);}
-.nav-links{display:flex;gap:clamp(10px,2.4vw,34px);list-style:none;}
-.nav-links a{
-  font-size:.78rem;letter-spacing:.28em;color:var(--dim);font-weight:600;
-  padding:8px 2px;position:relative;transition:color .25s;
-}
-.nav-links a::after{
-  content:"";position:absolute;left:0;bottom:2px;height:2px;width:0;background:var(--red);
-  box-shadow:0 0 10px var(--red);transition:width .3s;
-}
-.nav-links a:hover{color:#fff;}
-.nav-links a:hover::after{width:100%;}
-#navToggle{display:none;background:none;border:1px solid var(--line);color:#fff;font-size:1.3rem;padding:6px 12px;cursor:pointer;}
-.portal-btn{
-  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.22em;
-  padding:13px 22px;white-space:nowrap;cursor:pointer;
-  background:rgba(255,26,64,.14);color:#fff;border:1px solid var(--red);
-  text-shadow:0 0 10px rgba(255,26,64,.8);
-  box-shadow:0 0 20px rgba(255,26,64,.55),inset 0 0 16px rgba(255,26,64,.18);
-  animation:portalPulse 2.2s ease-in-out infinite;transition:all .25s;
-}
-.portal-btn:hover{
-  background:var(--red-deep);border-color:var(--red);
-  box-shadow:0 0 42px rgba(255,26,64,.95),inset 0 0 22px rgba(255,255,255,.15);
-  transform:translateY(-2px);
-}
-@keyframes portalPulse{
-  0%,100%{box-shadow:0 0 16px rgba(255,26,64,.45),inset 0 0 14px rgba(255,26,64,.15);}
-  50%{box-shadow:0 0 34px rgba(255,26,64,.85),inset 0 0 20px rgba(255,26,64,.28);}
-}
-
-/* ================= HERO ================= */
-#hero{
-  min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
-  background:url('hero-bayou-wolf.png') no-repeat,var(--void);
-  background-size:cover;background-position:center;
-  padding:8rem 20px 80px;
-}
-#hero::before{
-  content:"";position:absolute;inset:0;
-  background:
-    linear-gradient(to bottom,rgba(4,4,6,.82) 0%,rgba(4,4,6,.35) 35%,rgba(4,4,6,.45) 65%,var(--void) 100%),
-    radial-gradient(ellipse at center,transparent 30%,rgba(4,4,6,.75) 100%);
-}
-.hero-inner{position:relative;z-index:2;max-width:1000px;}
-.hero-kicker{
-  font-size:.75rem;letter-spacing:.5em;color:var(--cyan);margin-bottom:22px;
-  text-shadow:0 0 12px rgba(0,240,255,.7);
-}
-.hero-inner h1{
-  font-size:clamp(2.6rem,9vw,6.5rem);font-weight:900;line-height:1.04;color:#fff;
-  letter-spacing:.04em;margin-bottom:24px;
-  text-shadow:0 0 30px rgba(255,26,64,.45),0 4px 24px rgba(0,0,0,.9);
-}
-.hero-inner h1 .blood{color:var(--red);text-shadow:0 0 24px var(--red),0 0 80px rgba(255,0,51,.6);}
-.hero-sub{
-  font-size:clamp(1rem,2.4vw,1.25rem);color:var(--dim);max-width:640px;margin:0 auto 42px;line-height:1.7;
-}
-.cta-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
-.btn{
-  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.24em;
-  padding:18px 38px;cursor:pointer;display:inline-block;transition:all .25s;border:1px solid transparent;
-}
-.btn-primary{background:rgba(15,15,22,.85);color:#fff;border:1px solid #ff1a40;box-shadow:0 0 15px rgba(255,26,64,.4);}
-.btn-primary:hover{background:rgba(22,22,32,.92);border-color:#ff1a40;box-shadow:0 0 32px rgba(255,26,64,.8),0 0 10px rgba(255,26,64,.55);transform:translateY(-2px);}
-.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.35);}
-.btn-outline:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 24px rgba(0,240,255,.35);transform:translateY(-2px);}
-
-/* ================= SECTION SCAFFOLD ================= */
-.section{padding:110px clamp(20px,6vw,90px);max-width:1280px;margin:0 auto;}
-.badge{
-  display:inline-block;font-size:.72rem;letter-spacing:.3em;font-weight:700;color:var(--cyan);
-  border:1px solid rgba(0,240,255,.4);padding:10px 20px;margin-bottom:26px;
-  text-shadow:0 0 10px rgba(0,240,255,.6);box-shadow:inset 0 0 18px rgba(0,240,255,.06);
-}
-.badge.red{color:var(--red);border-color:rgba(255,26,64,.5);text-shadow:0 0 10px rgba(255,26,64,.7);box-shadow:inset 0 0 18px rgba(255,26,64,.08);}
-.section h2{
-  font-size:clamp(1.9rem,5vw,3.4rem);font-weight:800;color:#fff;letter-spacing:.05em;margin-bottom:18px;line-height:1.15;
-}
-.section h2 .blood{color:var(--red);text-shadow:0 0 20px rgba(255,26,64,.6);}
-.section .lede{color:var(--dim);max-width:720px;line-height:1.8;font-size:1.02rem;margin-bottom:54px;}
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease;}
-.reveal.in{opacity:1;transform:none;}
-
-/* ================= MUSIC ================= */
-.disc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.disc-card{
-  background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border:1px solid var(--line);overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s;
-}
-.disc-card:hover{transform:translateY(-8px);border-color:var(--red);box-shadow:0 0 34px rgba(255,26,64,.35);}
-.disc-card .cover{aspect-ratio:1/1;overflow:hidden;background:#000;}
-.disc-card .cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-.disc-card:hover .cover img{transform:scale(1.05);}
-.disc-body{padding:26px 24px 28px;}
-.disc-body h3{font-size:1.35rem;letter-spacing:.08em;color:#fff;margin-bottom:6px;}
-.disc-body .tag{font-size:.7rem;letter-spacing:.3em;color:var(--cyan);margin-bottom:20px;}
-.platforms{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.platform{
-  font-size:.72rem;letter-spacing:.18em;font-weight:600;text-align:center;
-  border:1px solid var(--line);color:var(--dim);padding:11px 6px;transition:all .25s;
-}
-.platform:hover{border-color:var(--red);color:#fff;box-shadow:0 0 14px rgba(255,26,64,.4);}
-
-/* ================= ANIMATION STUDIO ================= */
-#animation{background:linear-gradient(to bottom,var(--void),#07070c 50%,var(--void));}
-.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-bottom:48px;}
-.proj-card{
-  position:relative;background:#0a0a10;border:1px solid var(--line);
-  padding:38px 34px;overflow:hidden;transition:border-color .3s;
-}
-.proj-card::before{
-  content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
-  background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,240,255,.05) 3px 4px);
-  transition:opacity .3s;
-}
-.proj-card:hover{border-color:var(--cyan);}
-.proj-card:hover::before{opacity:1;animation:glitchShift .35s steps(2) infinite;}
-@keyframes glitchShift{0%{transform:translateX(0);}50%{transform:translateX(-4px);}100%{transform:translateX(3px);}}
-.proj-card h3{font-size:1.5rem;letter-spacing:.06em;color:#fff;margin-bottom:14px;position:relative;}
-.proj-thumb{border-radius:4px;overflow:hidden;margin-bottom:20px;border:1px solid rgba(255,255,255,.08);}
-.proj-thumb img{display:block;width:100%;height:auto;transition:transform .5s ease;}
-.proj-card:hover .proj-thumb img{transform:scale(1.04);}
-.proj-card:hover h3{text-shadow:2px 0 var(--red),-2px 0 var(--cyan);}
-.proj-status{
-  display:inline-block;font-size:.72rem;letter-spacing:.22em;font-weight:700;color:var(--cyan);
-  border:1px solid rgba(0,240,255,.35);padding:8px 14px;margin-bottom:18px;
-}
-.proj-card p{color:var(--dim);line-height:1.7;font-size:.95rem;}
-.notify-wrap{text-align:center;}
-.modal-veil{
-  position:fixed;inset:0;z-index:950;background:rgba(2,2,4,.8);backdrop-filter:blur(6px);
-  display:none;align-items:center;justify-content:center;padding:20px;
-}
-.modal-veil.open{display:flex;}
-.modal{
-  background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border:1px solid var(--red);box-shadow:0 0 50px rgba(255,26,64,.35);
-  padding:48px 44px;max-width:460px;width:100%;text-align:center;position:relative;
-}
-.modal h3{font-size:1.4rem;letter-spacing:.1em;margin-bottom:12px;color:#fff;}
-.modal p{color:var(--dim);font-size:.92rem;line-height:1.7;margin-bottom:26px;}
-.modal input{
-  width:100%;background:#0a0a10;border:1px solid var(--line);color:#fff;
-  font-family:'Space Grotesk',sans-serif;font-size:1rem;padding:15px;margin-bottom:18px;outline:none;
-}
-.modal input:focus{border-color:var(--red);box-shadow:0 0 14px rgba(255,26,64,.3);}
-.modal .btn{width:100%;}
-.modal-close{
-  position:absolute;top:12px;right:16px;background:none;border:none;color:var(--dim);
-  font-size:1.4rem;cursor:pointer;
-}
-.modal-close:hover{color:var(--red);}
-.confirm{display:none;}
-.confirm .big{font-size:3rem;margin-bottom:14px;color:var(--red);text-shadow:0 0 20px var(--red);}
-
-/* ================= ABOUT ================= */
-#about{background:linear-gradient(to bottom,var(--void),#07070c 60%,var(--void));text-align:center;}
-#about .lede{margin-left:auto;margin-right:auto;}
-.about-line{
-  font-family:'Cinzel',serif;font-size:clamp(1.4rem,4vw,2.4rem);font-weight:700;color:#fff;
-  letter-spacing:.06em;margin-bottom:52px;text-shadow:0 0 24px rgba(255,26,64,.35);
-}
-.about-line .blood{color:var(--red);}
-.power-badges{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
-.power-badge{
-  border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(16px);
-  padding:26px 34px;min-width:220px;transition:all .3s;
-}
-.power-badge:hover{border-color:var(--cyan);box-shadow:0 0 26px rgba(0,240,255,.25);}
-.power-badge .stat{font-family:'Cinzel',serif;font-size:1.7rem;font-weight:800;color:var(--red);text-shadow:0 0 14px rgba(255,26,64,.6);margin-bottom:8px;}
-.power-badge .lbl{font-size:.72rem;letter-spacing:.24em;color:var(--dim);}
-
-/* ================= CONTACT ================= */
-#contact{text-align:center;}
-#contact .lede{margin-left:auto;margin-right:auto;}
-.social-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-.social-btn{
-  font-size:.78rem;letter-spacing:.28em;font-weight:700;color:#fff;
-  border:1px solid rgba(255,255,255,.3);padding:16px 34px;transition:all .25s;
-}
-.social-btn:hover{border-color:var(--red);box-shadow:0 0 22px rgba(255,26,64,.45);transform:translateY(-2px);}
-.social-btn.disabled{color:#55555f;border-color:rgba(255,255,255,.12);cursor:not-allowed;}
-.social-btn.disabled:hover{transform:none;box-shadow:none;border-color:rgba(255,255,255,.12);}
-
-/* ================= FOOTER ================= */
-footer{
-  border-top:1px solid var(--line);padding:44px clamp(20px,6vw,90px);
-  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
-  background:#020204;
-}
-footer .copy{font-size:.75rem;letter-spacing:.2em;color:var(--dim);}
-footer .flinks{display:flex;gap:22px;}
-footer .flinks a{font-size:.72rem;letter-spacing:.24em;color:var(--dim);transition:color .25s;}
-footer .flinks a:hover{color:var(--red);}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:960px){
-  .disc-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto;}
-  .proj-grid{grid-template-columns:1fr;}
-}
-@media(max-width:768px){
-  nav{flex-wrap:wrap;height:auto;min-height:64px;padding:10px clamp(12px,4vw,20px);row-gap:8px;}
-  #navToggle{display:block;}
-  .nav-brand span{font-size:.9rem;}
-  .nav-brand img{height:34px;width:auto;}
-  .nav-links{
-    display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;
-    background:rgba(4,4,6,.97);border-bottom:1px solid var(--line);padding:10px 24px 22px;gap:4px;
-  }
-  .nav-links.open{display:flex;}
-  .nav-links a{display:block;padding:12px 4px;font-size:.85rem;}
-  .portal-btn{font-size:.58rem;padding:9px 12px;letter-spacing:.1em;max-width:100%;flex:0 1 auto;}
-}
-@media(max-width:760px){
-  .section{padding:80px 20px;}
-  .modal{padding:38px 26px;}
-  footer{justify-content:center;text-align:center;}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ================= SPLASH INTRO ================= -->
-<div id="intro" aria-hidden="true">
-  <div class="intro-stage">
-    <div class="intro-haze"></div>
-    <img class="intro-moon" src="intro-moon.png" alt="">
-    <div class="intro-wolf-flare"></div>
-    <div class="intro-wolf-wrap"><img src="wolf-emblem.webp" alt=""></div>
-    <div class="intro-brand">
-      <svg class="ekg" viewBox="0 0 600 90" preserveAspectRatio="xMidYMid meet">
-        <path d="M0,45 H150 L168,45 L182,12 L200,78 L214,30 L226,45 H310 L326,45 L342,6 L362,84 L378,28 L392,45 H470 L486,45 L500,18 L516,72 L530,38 L542,45 H600"/>
-      </svg>
-      <h1>DUSTINNOPE</h1>
-    </div>
-    <button id="skipIntro">SKIP INTRO</button>
-  </div>
-</div>
-
-<!-- ================= NAV ================= -->
-<nav>
-  <a class="nav-brand" href="#hero">
-    <img src="assets/dustinnope-logo.png" alt="Dustinnope logo">
+<header>
+  <a class="brand" href="index.html">
+    <img src="assets/studio-logo.png" alt="Dustinnope Animation Studios logo">
   </a>
-  <button id="navToggle" aria-label="Menu">&#9776;</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#music">[ MUSIC ]</a></li>
-    <li><a href="#store">[ STORE ]</a></li>
-    <li><a href="#animation">[ ANIMATION ]</a></li>
-    <li><a href="#about">[ ABOUT ]</a></li>
-    <li><a href="#contact">[ CONTACT ]</a></li>
-  </ul>
-  <a class="portal-btn" href="https://animation.dustinnope.com">[ ENTER ANIMATION STUDIOS &#10142; ]</a>
-</nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  <nav class="main-nav" id="mainNav">
+    <a class="nav-link" href="animations.html">ANIMATIONS</a>
+    <a class="nav-link" href="projects.html">PROJECTS</a>
+    <a class="nav-link" href="lore.html">LORE</a>
+    <a class="nav-link" href="about.html">ABOUT</a>
+    <a class="nav-link" href="contact.html">CONTACT</a>
+    <a class="hub-btn" href="https://dustinnope.com" target="_blank" rel="noopener">MUSIC HUB</a>
+    <a class="hub-btn" href="https://shop.dustinnope.com" target="_blank" rel="noopener">MERCH</a>
+  </nav>
+</header>
 
 <!-- ================= HERO ================= -->
 <section id="hero">
+  <div class="hero-bg"></div>
+  <canvas id="fog-canvas"></canvas>
   <div class="hero-inner">
-    <div class="hero-kicker">NOPE ENTERTAINMENT // OFFICIAL HUB</div>
-    <h1>RAW SOUND.<br><span class="blood">RELENTLESS</span> ART.</h1>
-    <p class="hero-sub">Central production hub for original music, independent animation, and unfiltered storytelling.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#music">[ EXPLORE DISCOGRAPHY ]</a>
-      <a class="btn btn-outline" href="#animation">[ STUDIO REELS ]</a>
+    <img class="hero-emblem" src="assets/wolf-emblem.webp" alt="Dustinnope Animation Studios wolf emblem">
+    <h1>DUSTINNOPE <span class="red">ANIMATION</span> STUDIOS</h1>
+    <div class="hero-btns">
+      <a class="btn btn-red" href="animations.html">ANIMATIONS</a>
+      <a class="btn btn-ghost" href="projects.html">PROJECTS</a>
+      <a class="btn btn-ghost" href="about.html">ABOUT THE STUDIO</a>
     </div>
   </div>
 </section>
 
-<!-- ================= MUSIC ================= -->
-<section id="music" class="section">
-  <div class="reveal">
-    <span class="badge red">[ DISCOGRAPHY ]</span>
-    <h2>THE <span class="blood">OUTLAW</span> LEDGER</h2>
-    <p class="lede">Every record cut independent. Every master owned outright. Stream the catalog on your platform of choice.</p>
+<!-- ================= ACTIVE REELS ================= -->
+<section class="section" id="reels">
+  <span class="kicker reveal">NOW SCREENING</span>
+  <h2 class="reveal">ACTIVE <span class="red">REELS</span></h2>
+  <p class="lede reveal">Finished work, playing now. Every frame cut, colored, and scored in-house — no label, no committee, no notes from upstairs.</p>
+  <div class="card-grid">
+    <article class="card reveal">
+      <div class="card-thumb"><img src="assets/concept-villain-anthem.webp" alt="Villain Anthem concept art" loading="lazy"></div>
+      <div class="card-body">
+        <p class="card-meta">APRIL 25, 2026 // OFFICIAL VISUALIZER</p>
+        <h3 class="card-title">VILLAIN ANTHEM</h3>
+        <p class="card-desc">A throne-room villain piece — red moon, stone, and smoke. The studio's heaviest visualizer to date.</p>
+        <a class="card-link" href="project/villain-anthem.html">WATCH + BEHIND THE SCENES &#8594;</a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="card-thumb"><img src="assets/concept-ding-dong.webp" alt="DING-DONG concept art" loading="lazy"></div>
+      <div class="card-body">
+        <p class="card-meta">SWAMP GOTHIC // FAN FAVORITE</p>
+        <h3 class="card-title">DING-DONG</h3>
+        <p class="card-desc">An abandoned plantation house in the swamp, one red window lit. The one the fans keep coming back to.</p>
+        <a class="card-link" href="project/ding-dong.html">WATCH + BEHIND THE SCENES &#8594;</a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="card-thumb"><img src="assets/concept-dark-metropolis.webp" alt="Dark Metropolis concept art" loading="lazy"></div>
+      <div class="card-body">
+        <p class="card-meta">APRIL 9, 2026 // CINEMATIC NARRATIVE</p>
+        <h3 class="card-title">DARK METROPOLIS</h3>
+        <p class="card-desc">A city drowned in black water under a blood moon. Sci-fi bayou noir, full story cut.</p>
+        <a class="card-link" href="project/dark-metropolis.html">WATCH + BEHIND THE SCENES &#8594;</a>
+      </div>
+    </article>
   </div>
-  <div class="disc-grid">
-    <article class="disc-card reveal">
-      <div class="cover"><img src="god-mode-cover.jpg" alt="God Mode album cover"></div>
-      <div class="disc-body">
-        <h3>GOD MODE</h3>
-        <div class="tag">STUDIO ALBUM</div>
-        <div class="platforms">
-          <a class="platform" href="https://open.spotify.com/search/dustinnope" target="_blank" rel="noopener">SPOTIFY</a>
-          <a class="platform" href="https://music.apple.com/us/search?term=dustinnope" target="_blank" rel="noopener">APPLE MUSIC</a>
-          <a class="platform" href="https://www.qobuz.com/us-en/album/god-mode-dustinnope/iyq73c0pptarb" target="_blank" rel="noopener">QOBUZ</a>
-          <a class="platform" href="https://listen.tidal.com/search?q=dustinnope" target="_blank" rel="noopener">TIDAL</a>
-          <a class="platform" href="https://www.deezer.com/search/dustinnope" target="_blank" rel="noopener">DEEZER</a>
-          <a class="platform" href="https://www.pandora.com/search/dustinnope/all" target="_blank" rel="noopener">PANDORA</a>
-        </div>
-      </div>
-    </article>
-    <article class="disc-card reveal">
-      <div class="cover"><img src="1984-cover.jpg" alt="1984 album cover"></div>
-      <div class="disc-body">
-        <h3>1984</h3>
-        <div class="tag">STUDIO ALBUM</div>
-        <div class="platforms">
-          <a class="platform" href="https://open.spotify.com/search/dustinnope" target="_blank" rel="noopener">SPOTIFY</a>
-          <a class="platform" href="https://music.apple.com/us/search?term=dustinnope" target="_blank" rel="noopener">APPLE MUSIC</a>
-          <a class="platform" href="https://www.qobuz.com/us-en/album/1984-dustinnope/g61v22gkpmlfb" target="_blank" rel="noopener">QOBUZ</a>
-          <a class="platform" href="https://listen.tidal.com/search?q=dustinnope" target="_blank" rel="noopener">TIDAL</a>
-          <a class="platform" href="https://www.deezer.com/search/dustinnope" target="_blank" rel="noopener">DEEZER</a>
-          <a class="platform" href="https://www.pandora.com/search/dustinnope/all" target="_blank" rel="noopener">PANDORA</a>
-        </div>
-      </div>
-    </article>
-    <article class="disc-card reveal">
-      <div class="cover"><img src="november-17th-cover.jpg" alt="November 17th album cover"></div>
-      <div class="disc-body">
-        <h3>NOVEMBER 17TH</h3>
-        <div class="tag">STUDIO ALBUM</div>
-        <div class="platforms">
-          <a class="platform" href="https://open.spotify.com/search/dustinnope" target="_blank" rel="noopener">SPOTIFY</a>
-          <a class="platform" href="https://music.apple.com/us/search?term=dustinnope" target="_blank" rel="noopener">APPLE MUSIC</a>
-          <a class="platform" href="https://www.qobuz.com/us-en/interpreter/dustinnope/23243368" target="_blank" rel="noopener">QOBUZ</a>
-          <a class="platform" href="https://listen.tidal.com/search?q=dustinnope" target="_blank" rel="noopener">TIDAL</a>
-          <a class="platform" href="https://www.deezer.com/search/dustinnope" target="_blank" rel="noopener">DEEZER</a>
-          <a class="platform" href="https://www.pandora.com/search/dustinnope/all" target="_blank" rel="noopener">PANDORA</a>
-        </div>
-      </div>
-    </article>
+  <div style="margin-top:44px;" class="reveal">
+    <a class="btn btn-ghost" href="animations.html">ALL ANIMATIONS</a>
   </div>
 </section>
 
-<!-- ================= NOPE STORE ================= -->
-<section id="store" class="section">
-  <div class="reveal">
-    <span class="badge cyan">[ NOPE STORE ]</span>
-    <h2>WEAR THE <span class="blood">PACK.</span></h2>
-    <p class="lede">Official Dustinnope merch — designed in the bayou, shipped worldwide. The new store HQ is live — fresh drops landing now.</p>
-  </div>
-  <div class="proj-grid">
-    <article class="proj-card reveal">
-      <div class="proj-thumb"><img src="shoe-slipon-night-swamp.webp" alt="Dustinnope Night Swamp Slip-Ons" loading="lazy"></div>
-      <h3>NIGHT SWAMP SLIP-ONS</h3>
-      <p class="proj-status">$69.99 — Sizes 5–13</p>
-      <div class="platforms">
-        <a class="platform" href="https://shop.dustinnope.com" target="_blank" rel="noopener">SHOP NOW</a>
-      </div>
-    </article>
-    <article class="proj-card reveal">
-      <div class="proj-thumb"><img src="shoe-laceup-night-swamp.webp" alt="Dustinnope Night Swamp Sneakers" loading="lazy"></div>
-      <h3>NIGHT SWAMP SNEAKERS</h3>
-      <p class="proj-status">$69.99 — Sizes 5–13</p>
-      <div class="platforms">
-        <a class="platform" href="https://shop.dustinnope.com" target="_blank" rel="noopener">SHOP NOW</a>
-      </div>
-    </article>
-  </div>
-  <div class="reveal" style="text-align:center;margin-top:2.5rem">
-    <a class="btn btn-primary" href="https://shop.dustinnope.com" target="_blank" rel="noopener">[ ENTER THE FULL STORE ]</a>
-  </div>
+<div class="wolf-divider"><img src="assets/wolf-emblem.webp" alt=""></div>
+
+<!-- ================= STUDIO LORE ================= -->
+<section class="section" id="lore-tease">
+  <span class="kicker reveal">STUDIO LORE</span>
+  <h2 class="reveal">HOW THE WORK <span class="red">GETS ITS LOOK</span></h2>
+  <p class="lede reveal">Every studio has a look. Ours comes out of the Louisiana night — dark water, red moon, and the wolf that runs it. Read the rules behind the visuals and why they never leave the bayou.</p>
+  <div class="reveal"><a class="btn btn-ghost" href="lore.html">READ THE LORE</a></div>
 </section>
 
-<!-- ================= ANIMATION STUDIO ================= -->
-<section id="animation" class="section">
-  <div class="reveal">
-    <span class="badge">[ IN PRODUCTION // RENDERING PIPELINE ACTIVE ]</span>
-    <h2>BORN IN THE BAYOU.<br><span class="blood">FORGED IN THE VOID.</span></h2>
-    <p class="lede">Independent animation, original music videos, and cinematic storytelling crafted without compromise. Explore active studio reels, recent drops, and ongoing projects straight out of the vault.</p>
-  </div>
-  <div class="proj-grid">
-    <article class="proj-card reveal">
-      <h3>BEG FOR IT TO STOP</h3>
-      <span class="proj-status">STORYBOARD LOCKED // IN FINAL ANIMATION</span>
-      <p>Full-sequence animation in progress. Frames rendering through the Nope Entertainment pipeline — nothing leaves the vault until it bleeds right.</p>
-    </article>
-    <article class="proj-card reveal">
-      <h3>IN THE NAME OF THE ZONE</h3>
-      <span class="proj-status">VISUAL SEQUENCING &amp; SOUND DESIGN</span>
-      <p>The visuals are locked in and sound design is underway. Southern Gothic sci-fi built frame by frame, mixed to hit like a sermon and a siren.</p>
-    </article>
-  </div>
-  <div class="notify-wrap reveal">
-    <button class="btn btn-primary" id="notifyBtn">[ NOTIFY ON DROP ]</button>
-  </div>
-</section>
-
-<div class="modal-veil" id="notifyVeil">
-  <div class="modal" role="dialog" aria-modal="true" aria-label="Notify on drop">
-    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-    <div class="form-view" id="notifyForm">
-      <h3>GET THE DROP FIRST</h3>
-      <p>Reels go live without warning. Leave your email and the transmission hits your inbox the second a project drops.</p>
-      <form id="notifyFormEl">
-        <input type="email" id="notifyEmail" placeholder="your@email.com" required>
-        <button type="submit" class="btn btn-primary">[ LOCK ME IN ]</button>
-      </form>
-    </div>
-    <div class="confirm" id="notifyConfirm">
-      <div class="big">&#10003;</div>
-      <h3>TRANSMISSION LOCKED</h3>
-      <p>You're on the list. When the reels drop, you'll hear it here first.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ================= ABOUT ================= -->
-<section id="about" class="section">
-  <div class="reveal">
-    <span class="badge red">[ THE OPERATOR ]</span>
-    <p class="about-line">Every master, every frame, <span class="blood">owned outright.</span></p>
-    <div class="power-badges">
-      <div class="power-badge">
-        <div class="stat">GOLD</div>
-        <div class="lbl">YOUTUBE GOLD CREATOR AWARD</div>
-      </div>
-      <div class="power-badge">
-        <div class="stat">NOMINEE</div>
-        <div class="lbl">TIKTOK RISING STAR</div>
-      </div>
-      <div class="power-badge">
-        <div class="stat">2M+</div>
-        <div class="lbl">LIFETIME STREAMS</div>
-      </div>
-      <div class="power-badge">
-        <div class="stat">100%</div>
-        <div class="lbl">INDEPENDENT</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="section">
-  <div class="reveal">
-    <span class="badge red">[ CONTACT ]</span>
-    <h2>FOLLOW THE <span class="blood">OUTLAW</span> EMPIRE</h2>
-    <p class="lede">Join the pack. Stay in the bayou. Every transmission runs through these channels.</p>
-    <div class="social-row">
-      <a class="social-btn" href="https://www.instagram.com/dustinnopemusic/" target="_blank" rel="noopener">INSTAGRAM</a>
-      <!-- TODO: official Facebook page URL -->
-      <span class="social-btn disabled" title="Coming soon">FACEBOOK</span>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
 <footer>
-  <div class="copy">&copy; 2026 DUSTINNOPE | NOPE ENTERTAINMENT. ALL RIGHTS RESERVED.</div>
-  <div class="flinks">
-    <a href="https://www.instagram.com/dustinnopemusic/" target="_blank" rel="noopener">INSTAGRAM</a>
-    <!-- TODO: official Facebook page URL -->
-    <a href="#contact" title="Coming soon">FACEBOOK</a>
-  </div>
+  <img class="foot-emblem" src="assets/wolf-emblem.webp" alt="Dustinnope wolf emblem">
+  <nav class="foot-nav">
+    <a href="animations.html">ANIMATIONS</a>
+    <a href="projects.html">PROJECTS</a>
+    <a href="lore.html">LORE</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="https://dustinnope.com" target="_blank" rel="noopener">MUSIC</a>
+    <a href="https://shop.dustinnope.com" target="_blank" rel="noopener">MERCH</a>
+  </nav>
+  <p>DUSTINNOPE ANIMATION STUDIOS // NOPE ENTERTAINMENT<br>&copy; <span class="js-year">2026</span> — <span class="red">EVERY FRAME, OWNED OUTRIGHT.</span></p>
 </footer>
 
-<script>
-/* ---------- SPLASH INTRO TIMELINE ---------- */
-(function(){
-  var intro = document.getElementById('intro');
-  var KEY = 'dn_intro_seen';
-  function finish(){
-    try{ sessionStorage.setItem(KEY,'1'); }catch(e){}
-    if(intro && intro.parentNode){ intro.parentNode.removeChild(intro); }
-  }
-  if(!intro) return;
-  try{
-    if(sessionStorage.getItem(KEY)){ finish(); return; }
-  }catch(e){}
-  document.getElementById('skipIntro').addEventListener('click', finish);
-  /* Beat 5: dissolve at 4.6s, remove at 5.4s */
-  setTimeout(function(){ intro.classList.add('dissolve'); }, 4600);
-  setTimeout(finish, 5450);
-})();
-
-/* ---------- NAV TOGGLE ---------- */
-(function(){
-  var t = document.getElementById('navToggle');
-  var l = document.getElementById('navLinks');
-  t.addEventListener('click', function(){ l.classList.toggle('open'); });
-  l.addEventListener('click', function(e){
-    if(e.target.tagName === 'A'){ l.classList.remove('open'); }
-  });
-})();
-
-/* ---------- SCROLL REVEAL ---------- */
-(function(){
-  var els = document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-    });
-  }, {threshold:.12});
-  els.forEach(function(e){ io.observe(e); });
-})();
-
-/* ---------- NOTIFY MODAL ---------- */
-(function(){
-  var veil = document.getElementById('notifyVeil');
-  var form = document.getElementById('notifyForm');
-  var confirm = document.getElementById('notifyConfirm');
-  document.getElementById('notifyBtn').addEventListener('click', function(){
-    form.style.display = 'block'; confirm.style.display = 'none';
-    veil.classList.add('open');
-  });
-  document.getElementById('modalClose').addEventListener('click', function(){
-    veil.classList.remove('open');
-  });
-  veil.addEventListener('click', function(e){
-    if(e.target === veil){ veil.classList.remove('open'); }
-  });
-  document.getElementById('notifyFormEl').addEventListener('submit', function(e){
-    e.preventDefault();
-    form.style.display = 'none';
-    confirm.style.display = 'block';
-  });
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
